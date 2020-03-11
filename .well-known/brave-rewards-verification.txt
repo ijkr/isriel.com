@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: isriel.com
+Token: a394dfed18190162503294c9ecbb2ed8627c2735e6d864489fd6e2542f66e683
