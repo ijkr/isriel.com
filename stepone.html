@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipeable Product Widget</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.widget-container {
+  width: 640px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.product-widget {
+  display: flex;
+  justify-content: space-between;
+              overflow-x: auto;  
+            scroll-snap-type: x mandatory; 
+            -webkit-overflow-scrolling: touch; 
+}
+
+.product {
+  position: relative;
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+              scroll-snap-align: start; 
+            margin-right: 10px; 
+            min-width: 200px; 
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  }
+.product-highlight {
+  background-color: peachpuff;
+}
+
+.product .sale-callout {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: #71c2a3fc;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 128px;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: bold;
+}
+.callout-inactive {
+  display: none;
+}
+.product-name {
+  min-height: 50px;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.product-price {
+  font-size: 16px;
+  
+}
+
+.add-to-cart {
+  margin-top: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #633cffff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 128px;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  bottom: 4px;
+}
+
+.add-to-cart:hover {
+  background-color: #7d5effff;
+}
+.product-highlight-cta {
+  background-color: darkred;
+}
+.product-highlight-cta:hover {
+  background-color: darkred;
+  opacity: 0.8 !important;
+}
+
+@media (max-width: 600px) {
+            .product-widget {
+                flex-wrap: nowrap; /* Disable wrapping on mobile */
+            }
+            .product {
+                flex: 0 0 auto; /* Allow products to scroll horizontally */
+                width: 80%; /* Wider products on smaller screens */
+
+
+    </style>
+</head>
+<body>
+
+<div class="widget-container">
+    <h2>We think you might like</h2>
+    <div class="product-widget">
+            <div class="product product-highlight">
+      <div class="sale-callout">MATCH THE TOP</div>
+      <img src="https://stepone.life/cdn/shop/files/240906_S1_SBRA-S-10063-1_SFUB-S-B_0085.jpg?v=1726015528">
+      <div class="product-name">SmoothFit<br>Padded Bra Espresso-Tini</div>
+      <div class="product-price">$39.00</div>
+      <button class="add-to-cart product-highlight-cta">Add To Cart</button>
+    </div>
+
+    <div class="product ">
+      <div class="sale-callout callout-inactive"></div>
+      <img src="https://stepone.life/cdn/shop/files/240906_S1_SBRA-S-10042-1_SBL-S-10042-1_0214_1428_WithCup.jpg?v=1726015441">
+      <div class="product-name">SmoothFit<br>Padded Bra Chic Champagne</div>
+      <div class="product-price">$39.00</div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+
+    <div class="product">
+      <div class="sale-callout callout-inactive">SALE</div>
+      <img src="https://stepone.life/cdn/shop/files/240515_S1_2_WOMANS_1181.jpg?v=1717594617">
+      <div class="product-name">SmoothFit<br>Thong Espresso-Tini</div>
+      <div class="product-price">$25.00</div>
+      <button class="add-to-cart">Add To Cart</button>
+        </div>
+    </div>
+</div>
