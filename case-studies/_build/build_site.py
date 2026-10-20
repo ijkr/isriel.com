@@ -300,27 +300,89 @@ PAGES = [
         client="Step One Life",
     ),
     dict(
-        slug="nine-entertainment",
+        slug="nine-intro-offer-pricing",
         source=None,  # markdown authored in src/
-        title="Nine Entertainment &mdash; CRO Case Studies",
-        hero_title="Paywalls, pricing and<br><em>68 experiments in a year</em>",
-        eyebrow="Nine Entertainment &nbsp;·&nbsp; SMH, The Age, Brisbane Times &amp; AFR &nbsp;·&nbsp; FY24",
-        standfirst=("Full-lifecycle ownership of onsite experimentation across four mastheads on the "
-                    "Piano platform: <strong>68 A/B tests, 43 conclusive winners (63% win rate)</strong>, "
-                    "and 1,391 incremental subscriptions from conclusive results."),
-        stats=[("43/68", "tests produced positive lift &mdash; 63% win rate", "win"),
-               ("47%", "average uplift from positive tests", "win"),
-               ("1,391", "incremental subscriptions from conclusive winners", "win"),
-               ("+102%", "The Age conversions, multi-package paywall", "win")],
-        meta=[("Role", "CRO &amp; Experimentation Lead &mdash; full lifecycle across 4 mastheads"),
-              ("Programme scale", "68 A/B tests in FY24 on the Piano platform; paywall optimisation, intro offer pricing, personalised pricing, social ribbons and meters"),
-              ("Analysis depth", "Audience segments (anon, registered, direct), device-level, metered vs subscriber-only paywalls"),
-              ("Reporting", "Campaign performance at a glance, test-level deep dives, programme-level summary to Subscriptions &amp; Marketing and Product")],
+        title="Intro Offer Pricing &mdash; Nine Entertainment",
+        hero_title="Calibrating intro pricing<br>to <em>each masthead's market</em>",
+        eyebrow="Nine Entertainment &nbsp;·&nbsp; SMH, The Age &amp; AFR &nbsp;·&nbsp; Nov&ndash;Dec 2023",
+        standfirst=("SMH and The Age were the only publishers not advertising a discounted intro offer, "
+                    "and the AFR's was the most expensive in its market. A three-channel flash-sale "
+                    "programme &mdash; paywall, email and landing page &mdash; acquired "
+                    "<strong>2,751 subscriptions</strong> and found that different price points win on "
+                    "different paywall types."),
+        stats=[("2,751", "subscriptions acquired in the flash-sale window", "win"),
+               ("+129%", "conversion on the winning metered-paywall offer", "win"),
+               ("$26K", "annualised revenue from the $1/week paywall test", "win"),
+               ("3", "channels tested independently, then coordinated", "neutral")],
+        meta=[("Role", "CRO &amp; Experimentation Lead &mdash; hypothesis &rarr; build &rarr; run &rarr; analyse across paywall, email and landing page"),
+              ("Programme scale", "4 email offers, 5 paywall price points, metered vs subscriber-only paywalls, 3 mastheads"),
+              ("Primary metric owned", "Conversion rate, measured per channel before coordination"),
+              ("Status", "75% of SMH/The Age acquisition target; 83% of AFR target")],
+        client="Nine Entertainment",
+    ),
+    dict(
+        slug="nine-personalised-retention",
+        source=None,
+        title="Personalised Pricing &amp; Retention &mdash; Nine Entertainment",
+        hero_title="Pricing the renewal<br>before the <em>cancellation decision</em>",
+        eyebrow="Nine Entertainment &nbsp;·&nbsp; All mastheads &nbsp;·&nbsp; FY22&ndash;FY24",
+        standfirst=("26% of subscribers cancelled the moment their promotion ended. A churn-propensity "
+                    "model tiered every subscriber 1&ndash;10 and priced their renewal accordingly &mdash; "
+                    "until its precision problems forced the right call: <strong>abandon model-led "
+                    "targeting for randomised testing</strong>."),
+        stats=[("26%", "of subscribers cancelled the moment their promotion ended", "loss"),
+               ("14,600&ndash;20,000", "subscribers retained in the modelled scenario", "win"),
+               ("$400K&ndash;$530K", "projected additional annual revenue", "win"),
+               ("1&ndash;10", "churn-propensity score segmenting every subscriber", "neutral")],
+        meta=[("Role", "CRO &amp; Experimentation Lead &mdash; retention pricing strategy across all mastheads"),
+              ("Programme scale", "3 risk tiers, D-6 transactional eDM + SMS renewal comms, Starter vs Premium Digital churn patterns"),
+              ("Key decision", "Pivoted from a 5&ndash;10% precision-limited propensity model to randomised A/B testing on flash-sale cohorts"),
+              ("Status", "Modelled at $400K&ndash;$530K annual revenue; retention pricing adopted over acquisition spend")],
+        client="Nine Entertainment",
+    ),
+    dict(
+        slug="nine-social-ribbon",
+        source=None,
+        title="Social Ribbon: Removing the Timer &mdash; Nine Entertainment",
+        hero_title="The 30-second timer<br><em>costing conversions</em>",
+        eyebrow="Nine Entertainment &nbsp;·&nbsp; AFR &nbsp;·&nbsp; CRO-30.0-2312",
+        standfirst=("One variable: the social ribbon's auto-dismissing 30-second timer was removed, "
+                    "letting the offer persist until the reader actively dismisses it. "
+                    "<strong>+33% conversion</strong> &mdash; removing artificial expiry friction beat "
+                    "manufactured urgency."),
+        stats=[("+33%", "conversion lift with the timer removed", "win"),
+               ("+26%", "clickthrough lift &mdash; 293 incremental clicks", "win"),
+               ("$6K", "annualised incremental revenue", "win"),
+               ("947K", "visitors over 21 days", "neutral")],
+        meta=[("Role", "CRO &amp; Experimentation Lead &mdash; single-variable paywall-surface test"),
+              ("Programme scale", "21 days, 947K visitors, AFR social ribbon on the Piano platform"),
+              ("Primary metric owned", "Conversion rate and clickthrough rate"),
+              ("Status", "Winner; recommendation carried into the next social ribbon template build")],
+        client="Nine Entertainment",
+    ),
+    dict(
+        slug="nine-multi-package-paywall",
+        source=None,
+        title="Multi-Package Paywall &mdash; Nine Entertainment",
+        hero_title="Three prices instead of<br><em>take-it-or-leave-it</em>",
+        eyebrow="Nine Entertainment &nbsp;·&nbsp; SMH &amp; The Age &nbsp;·&nbsp; CRO-73/74.0-2404",
+        standfirst=("A single-package paywall offered one price as take-it-or-leave-it. Replacing it "
+                    "with three simultaneous options let readers self-select to their own price "
+                    "sensitivity: <strong>+70% conversions at SMH, +102% at The Age</strong>, both at "
+                    "100% winning probability."),
+        stats=[("+70%", "SMH conversions (622 &rarr; 1,058)", "win"),
+               ("+102%", "The Age conversions (324 &rarr; 654)", "win"),
+               ("+122%", "SMH revenue", "win"),
+               ("765", "incremental sales across both mastheads", "win")],
+        meta=[("Role", "CRO &amp; Experimentation Lead &mdash; paywall-structure test, two mastheads in parallel"),
+              ("Programme scale", "Single-package vs three-package paywall, SMH &amp; The Age, Piano platform"),
+              ("Primary metric owned", "Conversion rate, with revenue as the commercial read"),
+              ("Status", "Winner on both mastheads; follow-up recommended: retest without Premium Digital on offer")],
         client="Nine Entertainment",
     ),
 ]
 
-INDEX_STATS = [("5", "case studies &mdash; two employers, 4 mastheads", "neutral"),
+INDEX_STATS = [("8", "case studies &mdash; two employers, 4 mastheads", "neutral"),
                ("77", "documented experiments behind them", "neutral"),
                ("60%+", "documented win rate across both programmes", "win"),
                ("7", "storefronts / mastheads / markets", "neutral")]
@@ -338,9 +400,18 @@ INDEX_ROWS = [
     ("step-one-tiered-discounting", "Tiered Discounting &amp; Pack Pricing", "Step One Life",
      "AU / UK / US · Feb–Jun 2026", "+A$30,894", "incremental revenue",
      "Unit-based tiers replaced with spend thresholds across 9 experiments, with a quantified discount-efficiency finding."),
-    ("nine-entertainment", "Paywalls, Pricing &amp; Programmes", "Nine Entertainment",
-     "SMH · The Age · BT · AFR · FY24", "63% win rate", "43/68 tests",
-     "Intro offer pricing, multi-package paywalls, social ribbons and a personalised retention-pricing strategy."),
+    ("nine-intro-offer-pricing", "Intro Offer Pricing", "Nine Entertainment",
+     "SMH · The Age · AFR · Nov–Dec 2023", "2,751", "subscriptions acquired",
+     "A three-channel flash-sale programme across paywall, email and landing page — different price points win on different paywall types."),
+    ("nine-personalised-retention", "Personalised Pricing &amp; Retention", "Nine Entertainment",
+     "All mastheads · FY22–FY24", "$400–530K", "modelled annual revenue",
+     "Churn-propensity-tiered renewal pricing — and the pivot to randomised testing when the model's precision fell short."),
+    ("nine-social-ribbon", "Social Ribbon: Removing the Timer", "Nine Entertainment",
+     "AFR · CRO-30.0-2312", "+33%", "conversion",
+     "One variable — the 30-second auto-dismiss timer removed. Expiry friction was costing engagement, not creating urgency."),
+    ("nine-multi-package-paywall", "Multi-Package Paywall", "Nine Entertainment",
+     "SMH · The Age · CRO-73/74.0-2404", "+102%", "The Age conversions",
+     "Three prices instead of take-it-or-leave-it: +70% conversions at SMH, +102% at The Age, both at 100% winning probability."),
 ]
 
 
