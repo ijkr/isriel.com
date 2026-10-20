@@ -51,7 +51,10 @@ cd case-studies/_build
 #      content/step-one/Landing Page CRO - Step One Case Study.md
 #      content/step-one/Social Proof Messaging - Step One Case Study.md
 #      content/step-one/Tiered Discounting and Pricing - Step One Case Study.md
-#      src/nine-entertainment.md        ← this one lives in src/ by design
+#      src/nine-intro-offer-pricing.md     ← the four Nine sources live in src/ by design
+#      src/nine-personalised-retention.md
+#      src/nine-social-ribbon.md
+#      src/nine-multi-package-paywall.md
 #    Or point elsewhere:  export CASES_DIR=/path/to/markdown
 
 # 2. password — one of:
