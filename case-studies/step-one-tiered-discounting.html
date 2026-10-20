@@ -192,7 +192,7 @@ footer a{color:var(--muted);border:0}
 <hr />
 <h2 id="2-method"><span class="num">02</span><span class="t">Method</span></h2>
 <p><strong>Platform:</strong> Shoplift, 50/50 split, storefront-level theme tests.
-<strong>Statistical approach:</strong> two-proportion z-test for CVR and ATC rate; zero-inflated z-test for RPV (per-order revenue padded with zeros to visitor count). Standard α = 0.05, with win probability reported where the test fell short.
+<strong>Statistical approach:</strong> two-proportion significance test on conversion rate and add-to-cart rate; zero-inflated test on revenue per visitor (per-order revenue padded with zeros to visitor count). Standard 95% confidence threshold, with probability of improvement reported where the test fell short.
 <strong>Segmentation at every read:</strong> device, new vs returning, and channel — because the whole question was whether a discount mechanic behaves the same for cold acquisition traffic and warm CRM traffic.
 <strong>Diagnostic layer:</strong> SKU-prefix level unit and revenue mix analysis, and pack-tier selection ratios, to explain <em>why</em> a metric moved rather than just that it did.</p>
 <p>Critically, I ran the AU test twice — once before and once after a men's price increase landed mid-programme — so the result could not be dismissed as an artefact of old price points.</p>
@@ -299,21 +299,21 @@ footer a{color:var(--muted);border:0}
 <td>6.14%</td>
 <td>6.65%</td>
 <td><strong>+8.3%</strong></td>
-<td><span class="dot win"></span> z = −3.08, 99.9% confidence</td>
+<td><span class="dot win"></span> 99.9% confidence</td>
 </tr>
 <tr>
 <td>Add to Cart Rate</td>
 <td>15.45%</td>
 <td>16.91%</td>
 <td><strong>+9.5%</strong></td>
-<td><span class="dot win"></span> z = −7.11, &gt;99.99% confidence</td>
+<td><span class="dot win"></span> &gt;99.99% confidence</td>
 </tr>
 <tr>
 <td>Clickthrough Rate</td>
 <td>45.00%</td>
 <td>46.16%</td>
 <td>+2.6%</td>
-<td><span class="dot win"></span> z = −4.18, &gt;99.99% confidence</td>
+<td><span class="dot win"></span> &gt;99.99% confidence</td>
 </tr>
 <tr>
 <td>Average Order Value</td>
@@ -352,7 +352,7 @@ footer a{color:var(--muted);border:0}
 <td>£3.1122</td>
 <td>£3.1270</td>
 <td>+0.47%</td>
-<td><span class="dot loss"></span> 58.5% win chance</td>
+<td><span class="dot loss"></span> 58.5% probability of improvement</td>
 </tr>
 <tr>
 <td>Add to Cart Rate</td>
@@ -411,14 +411,14 @@ footer a{color:var(--muted);border:0}
 <td>£2.1421</td>
 <td>£2.1624</td>
 <td>+0.95%</td>
-<td><span class="dot loss"></span> 65.7% win chance</td>
+<td><span class="dot loss"></span> 65.7% probability of improvement</td>
 </tr>
 <tr>
 <td>Add to Cart Rate</td>
 <td>8.68%</td>
 <td>9.21%</td>
 <td><strong>+6.1%</strong></td>
-<td><span class="dot win"></span> z = 5.00, &gt;99.9%</td>
+<td><span class="dot win"></span> &gt;99.9% confidence</td>
 </tr>
 <tr>
 <td>Conversion Rate</td>
@@ -457,7 +457,7 @@ footer a{color:var(--muted);border:0}
 </tr>
 </tbody>
 </table></div>
-<p><strong>This is the finding the case study turns on.</strong> On RPV the test was a non-result (65.7% win chance, never significant). On discount efficiency it was emphatic: the spend model gave away <strong>£21,136 less in promotional cost</strong> across 5,400 orders while generating <strong>£2,982 more revenue</strong>. Discount is a direct deduction from revenue, so the contribution improvement over 27 days is on the order of <strong>£24,000 — and it did not require an RPV win to be real.</strong></p>
+<p><strong>This is the finding the case study turns on.</strong> On RPV the test was a non-result (65.7% probability of improvement, never significant). On discount efficiency it was emphatic: the spend model gave away <strong>£21,136 less in promotional cost</strong> across 5,400 orders while generating <strong>£2,982 more revenue</strong>. Discount is a direct deduction from revenue, so the contribution improvement over 27 days is on the order of <strong>£24,000 — and it did not require an RPV win to be real.</strong></p>
 <p>Two statistical signatures told the story cleanly:
 - <strong>ATC z-score grew monotonically across every read:</strong> 3.22 → 3.52 → 3.64 → 4.86 → 5.00. A genuine, compounding effect.
 - <strong>RPV oscillated:</strong> +0.57% → +1.18% → +0.58% → +0.89% → +0.95%. Real, but too small to prove at this traffic.</p>
@@ -487,7 +487,7 @@ footer a{color:var(--muted);border:0}
 <td>12.64%</td>
 <td>13.53%</td>
 <td><strong>+7.02%</strong></td>
-<td><span class="dot win"></span> &gt;99.9%</td>
+<td><span class="dot win"></span> &gt;99.9% confidence</td>
 </tr>
 <tr>
 <td>Conversion Rate</td>

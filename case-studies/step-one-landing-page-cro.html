@@ -189,7 +189,7 @@ footer a{color:var(--muted);border:0}
 <h2 id="2-method"><span class="num">02</span><span class="t">Method</span></h2>
 <p><strong>Platform:</strong> Shoplift, landing page test on the LEC experience.
 <strong>Window:</strong> 13–15 February 2026, launched alongside the Shredders limited-edition drop.
-<strong>Statistics:</strong> two-proportion z-test for CVR and ATC rate; zero-inflated z-test for RPV. α = 0.05.
+<strong>Statistics:</strong> two-proportion significance test on conversion rate and add-to-cart rate; zero-inflated test on revenue per visitor. 95% confidence threshold.
 <strong>Guardrail:</strong> AOV was tracked explicitly, because removing price visibility is exactly the kind of change that can lift conversion while quietly degrading order value.</p>
 <p><strong>The comparison test</strong> in this case study is the opposite kind of change: a competitor-focused funnel (<code>AU_CLP_CVR_260127</code>, SO vs Cotton v2) that increased the amount of persuasion on the page. Reading the two together is the point — one removed information, one added it, and the outcomes were dramatically different.</p>
 <hr />
@@ -211,14 +211,14 @@ footer a{color:var(--muted);border:0}
 <td>3,899</td>
 <td>3,696</td>
 <td>—</td>
-<td>χ² = 5.4 ⚠ moderate SRM</td>
+<td>⚠ moderate traffic imbalance</td>
 </tr>
 <tr>
 <td><strong>Conversion Rate</strong></td>
 <td><strong>3.62%</strong></td>
 <td><strong>5.17%</strong></td>
 <td><strong>+42.8%</strong></td>
-<td><span class="dot win"></span> <strong>z = −11.17, &gt;99.99% confidence</strong></td>
+<td><span class="dot win"></span> <strong>&gt;99.99% confidence</strong></td>
 </tr>
 <tr>
 <td><strong>Revenue Per Visitor</strong></td>
@@ -253,14 +253,14 @@ footer a{color:var(--muted);border:0}
 <td>10.36%</td>
 <td>12.12%</td>
 <td><strong>+17.0%</strong></td>
-<td><span class="dot win"></span> z = −2.43, 99.24% confidence</td>
+<td><span class="dot win"></span> 99.24% confidence</td>
 </tr>
 <tr>
 <td>Clickthrough Rate</td>
 <td>35.68%</td>
 <td>42.23%</td>
 <td><strong>+18.4%</strong></td>
-<td><span class="dot win"></span> z = −5.86, &gt;99.99% confidence</td>
+<td><span class="dot win"></span> &gt;99.99% confidence</td>
 </tr>
 <tr>
 <td><strong>Average Order Value</strong></td>
@@ -382,7 +382,7 @@ I built these pages. That meant the hypothesis could go from observation to live
 <hr />
 <p><em>Sources: <code>exp_log.xlsx</code> experiments + results sheets (Step One CRO Program, Data/Sources), and Shoplift device/visitor/channel breakdowns. All figures traceable to named experiment IDs.</em>
 <em>Programme IDs: AU_CLP_CVR_260214 · AU_CLP_CVR_260127.</em>
-<em>Note: AU_CLP_CVR_260214 carries a moderate SRM flag (χ² = 5.4, &gt;95% confidence). A 2.6% visitor imbalance is immaterial to a +42.8% effect at &gt;99.99% confidence — see <code>Reports/exp_log_QC_report.md</code>. AU_CLP_CVR_260127 has no statistical block in the results sheet; figures are drawn from the narrative report.</em></p>
+<em>Note: AU_CLP_CVR_260214 carries a moderate traffic-imbalance flag (&gt;95% confidence). A 2.6% visitor imbalance is immaterial to a +42.8% effect at &gt;99.99% confidence — see <code>Reports/exp_log_QC_report.md</code>. AU_CLP_CVR_260127 has no statistical block in the results sheet; figures are drawn from the narrative report.</em></p>
 <footer>
   <span>Isriel Robinson &middot; Step One Life</span>
   <span>Private &mdash; not for distribution</span>

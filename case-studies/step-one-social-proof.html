@@ -187,7 +187,7 @@ footer a{color:var(--muted);border:0}
 <hr />
 <h2 id="2-method"><span class="num">02</span><span class="t">Method</span></h2>
 <p><strong>Platform:</strong> Shoplift, 50/50 storefront tests.
-<strong>Statistics:</strong> two-proportion z-test for CVR and ATC rate; zero-inflated z-test for RPV. α = 0.05.
+<strong>Statistics:</strong> two-proportion significance test on conversion rate and add-to-cart rate; zero-inflated test on revenue per visitor. 95% confidence threshold.
 <strong>Segmentation every read:</strong> device, new vs returning, channel.
 <strong>Design decision:</strong> the same treatment, translated but not redesigned, ran in all three markets — so the comparison is as clean as a cross-market comparison can be.</p>
 <p>The three tests ran in <strong>overlapping windows</strong> (US from 11 Dec, AU and UK from 10 Dec), both through the Christmas trading period. That overlap matters for interpretation and I address it below.</p>
@@ -210,14 +210,14 @@ footer a{color:var(--muted);border:0}
 <td>5,737</td>
 <td>5,441</td>
 <td>—</td>
-<td>χ² = 7.84 ⚠ moderate SRM</td>
+<td>⚠ moderate traffic imbalance</td>
 </tr>
 <tr>
 <td><strong>Conversion Rate</strong></td>
 <td><strong>3.17%</strong></td>
 <td><strong>4.06%</strong></td>
 <td><strong>+28.1%</strong></td>
-<td><span class="dot win"></span> <strong>z = −7.04, &gt;99.99% confidence</strong></td>
+<td><span class="dot win"></span> <strong>&gt;99.99% confidence</strong></td>
 </tr>
 <tr>
 <td><strong>Revenue Per Visitor</strong></td>
@@ -238,14 +238,14 @@ footer a{color:var(--muted);border:0}
 <td>7.44%</td>
 <td>9.17%</td>
 <td><strong>+23.3%</strong></td>
-<td><span class="dot win"></span> z = −3.31, 99.95% confidence</td>
+<td><span class="dot win"></span> 99.95% confidence</td>
 </tr>
 <tr>
 <td>Clickthrough Rate</td>
 <td>34.74%</td>
 <td>38.27%</td>
 <td><strong>+10.2%</strong></td>
-<td><span class="dot win"></span> z = −3.88, &gt;99.99% confidence</td>
+<td><span class="dot win"></span> &gt;99.99% confidence</td>
 </tr>
 <tr>
 <td>Average Order Value</td>
@@ -258,7 +258,7 @@ footer a{color:var(--muted);border:0}
 </table></div>
 <p><strong>This is the definitive result.</strong> A +28.1% conversion lift at &gt;99.99% confidence, with ATC rate up 23.3% and clickthrough up 10.2%. The treatment didn't just convert better — it moved people through the funnel earlier, which is the signature of a message that lands on arrival rather than one that rescues a hesitant shopper at the end.</p>
 <p>AOV compressed 3.4% ($64.82 → $62.58). That's the honest caveat: RPV still rose 26% because the conversion gain dwarfed it, but the treatment did pull in slightly lower-value orders. Worth noting that AOV compression alongside a big CVR lift is a pattern I watch for specifically — on paid channels it's often a warning sign rather than a win.</p>
-<p>The moderate SRM flag (51.3/48.7, χ² = 7.84, &gt;95% confidence) is real but immaterial: a 2.6% imbalance cannot produce a 28.1% effect at &gt;99.99% confidence.</p>
+<p>The moderate traffic-imbalance flag (51.3/48.7, &gt;95% confidence) is real but immaterial: a 2.6% imbalance cannot produce a 28.1% effect at &gt;99.99% confidence.</p>
 <h3 id="au-au-theme-cvr-251210-10-23-dec-2025">AU — <code>AU_Theme_CVR_251210</code> | 10–23 Dec 2025</h3>
 <div class="tw"><table>
 <thead>
@@ -276,14 +276,14 @@ footer a{color:var(--muted);border:0}
 <td>27,247</td>
 <td>26,218</td>
 <td>—</td>
-<td>χ² = 19.8 ⚠ minor SRM</td>
+<td>⚠ minor traffic imbalance</td>
 </tr>
 <tr>
 <td>Conversion Rate</td>
 <td>7.38%</td>
 <td>7.71%</td>
 <td><strong>+4.4%</strong></td>
-<td>→ z = −1.85, 96.8% confidence</td>
+<td>→ 96.8% confidence</td>
 </tr>
 <tr>
 <td>Revenue Per Visitor</td>
@@ -304,7 +304,7 @@ footer a{color:var(--muted);border:0}
 <td>47.90%</td>
 <td>49.75%</td>
 <td>+3.9%</td>
-<td><span class="dot win"></span> z = −4.28, &gt;99.99% confidence</td>
+<td><span class="dot win"></span> &gt;99.99% confidence</td>
 </tr>
 <tr>
 <td>Average Order Value</td>
@@ -390,14 +390,14 @@ footer a{color:var(--muted);border:0}
 <td>34,422</td>
 <td>34,070</td>
 <td>—</td>
-<td>χ² = 1.81 <span class="dot win"></span> balanced</td>
+<td><span class="dot win"></span> balanced split</td>
 </tr>
 <tr>
 <td>Conversion Rate</td>
 <td>7.29%</td>
 <td>7.40%</td>
 <td>+1.5%</td>
-<td><span class="dot loss"></span> z = −0.62, not significant</td>
+<td><span class="dot loss"></span> not significant</td>
 </tr>
 <tr>
 <td>Revenue Per Visitor</td>
@@ -436,7 +436,7 @@ footer a{color:var(--muted);border:0}
 </tr>
 </tbody>
 </table></div>
-<p><strong>A directional result I reported as directional.</strong> The variant generated 31 more orders from 352 fewer visitors and £5,388 more revenue, with RPV up 5.3% and AOV up 3.0%. But CVR moved only 1.5% at a 68.7% win chance — roughly a one-in-three chance the lift is noise — and the test never reached significance.</p>
+<p><strong>A directional result I reported as directional.</strong> The variant generated 31 more orders from 352 fewer visitors and £5,388 more revenue, with RPV up 5.3% and AOV up 3.0%. But CVR moved only 1.5% at a 68.7% probability of improvement — roughly a one-in-three chance the lift is noise — and the test never reached significance.</p>
 <p>The revenue lift substantially outpaced the conversion lift, which suggests the treatment influenced higher-value segments or encouraged larger baskets rather than simply converting more people. Mobile again outperformed (CVR +2.0%, RPV +5.5%, AOV +2.9%) while desktop was flat-to-negative (CVR −0.2%, AOV +3.6%).</p>
 <hr />
 <h2 id="4-the-cross-market-comparison"><span class="num">04</span><span class="t">The Cross-Market Comparison</span></h2>
@@ -474,7 +474,7 @@ footer a{color:var(--muted);border:0}
 <tr>
 <td><strong>UK</strong></td>
 <td>+1.5%</td>
-<td><span class="dot loss"></span> 68.7% win chance</td>
+<td><span class="dot loss"></span> 68.7% probability of improvement</td>
 <td>+5.3%</td>
 <td>+3.0%</td>
 <td>68,492</td>
@@ -499,7 +499,7 @@ AU's +4.4% CVR aggregate contains mobile at +7.0% and desktop at −5.2%. Readin
 <p><strong>3. AOV compression is a flag, not a footnote.</strong>
 The US lifted CVR 28.1% while AOV fell 3.4%. RPV still rose 26%, so it was the right call — but a social-proof claim that pulls in lower-value orders is doing something different from one that converts the same customer. On paid channels I treat that pattern as a warning; here, with RPV decisively up, it was acceptable.</p>
 <p><strong>4. Statistical honesty is a position, not a hedge.</strong>
-The UK result had a real revenue story (+£5,388) and I could have presented it as a win on revenue. It didn't reach significance on its primary metric, so I called it directional with the 68.7% win probability stated plainly. The US result — &gt;99.99% confidence — needs no such caveat, and the contrast between the two is more convincing than either alone.</p>
+The UK result had a real revenue story (+£5,388) and I could have presented it as a win on revenue. It didn't reach significance on its primary metric, so I called it directional with the 68.7% probability of improvement stated plainly. The US result — &gt;99.99% confidence — needs no such caveat, and the contrast between the two is more convincing than either alone.</p>
 <p><strong>5. A one-element test is worth running in three markets precisely because it's one element.</strong>
 No layout, imagery, or pricing confound. Whatever difference emerged is attributable to the message and the market, which is why the 28.1%/1.5% spread is a genuine finding rather than an artefact of three differently-built pages.</p>
 <hr />
@@ -564,7 +564,7 @@ No layout, imagery, or pricing confound. Whatever difference emerged is attribut
 <hr />
 <p><em>Sources: <code>exp_log.xlsx</code> experiments + results sheets (Step One CRO Program, Data/Sources), and Shoplift device/visitor/channel breakdowns. All figures traceable to named experiment IDs.</em>
 <em>Programme IDs: US_Theme_CVR_251211 · AU_Theme_CVR_251210 · UK_Theme_CVR_251210.</em>
-<em>Note: US_Theme_CVR_251211 carries a moderate SRM flag (χ² = 7.84); AU_Theme_CVR_251210 a minor one (χ² = 19.8). Neither is material to the effect sizes reported — see <code>Reports/exp_log_QC_report.md</code>.</em></p>
+<em>Note: US_Theme_CVR_251211 carries a moderate traffic-imbalance flag; AU_Theme_CVR_251210 a minor one. Neither is material to the effect sizes reported — see <code>Reports/exp_log_QC_report.md</code>.</em></p>
 <footer>
   <span>Isriel Robinson &middot; Step One Life</span>
   <span>Private &mdash; not for distribution</span>

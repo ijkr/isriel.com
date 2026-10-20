@@ -192,7 +192,7 @@ footer a{color:var(--muted);border:0}
 <hr />
 <h2 id="2-method"><span class="num">02</span><span class="t">Method</span></h2>
 <p><strong>Platform:</strong> Shoplift, storefront theme tests.
-<strong>Statistics:</strong> two-proportion z-test for CVR and ATC rate; zero-inflated z-test for RPV. α = 0.05.
+<strong>Statistics:</strong> two-proportion significance test on conversion rate and add-to-cart rate; zero-inflated test on revenue per visitor. 95% confidence threshold.
 <strong>Segmentation every read:</strong> device (mobile is ~85% of traffic), new vs returning, channel.
 <strong>Diagnostic layer:</strong> SKU-prefix unit mix and pack-tier analysis, to explain <em>why</em> a metric moved.</p>
 <p>I ran this as an <strong>iterative programme</strong>, not a single test. Each round kept what worked and rebuilt what didn't — and one round was killed outright rather than reported.</p>
@@ -215,14 +215,14 @@ footer a{color:var(--muted);border:0}
 <td>22,955</td>
 <td>22,745</td>
 <td>—</td>
-<td>χ² = 0.96 <span class="dot win"></span> balanced</td>
+<td><span class="dot win"></span> balanced split</td>
 </tr>
 <tr>
 <td>Conversion Rate</td>
 <td>6.14%</td>
 <td>6.27%</td>
 <td>+2.1%</td>
-<td><span class="dot loss"></span> z = −0.80, not significant</td>
+<td><span class="dot loss"></span> not significant</td>
 </tr>
 <tr>
 <td>Revenue Per Visitor</td>
@@ -276,14 +276,14 @@ footer a{color:var(--muted);border:0}
 <td>3,994</td>
 <td>3,847</td>
 <td>—</td>
-<td>χ² = 2.76 <span class="dot win"></span> balanced</td>
+<td><span class="dot win"></span> balanced split</td>
 </tr>
 <tr>
 <td>Conversion Rate</td>
 <td>4.01%</td>
 <td>4.21%</td>
 <td><strong>+5.1%</strong></td>
-<td>→ z = −1.49, 93.2% confidence</td>
+<td>→ 93.2% confidence</td>
 </tr>
 <tr>
 <td>Revenue Per Visitor</td>
@@ -370,14 +370,14 @@ footer a{color:var(--muted);border:0}
 <td>15,855</td>
 <td>15,732</td>
 <td>—</td>
-<td>χ² = 0.48 <span class="dot win"></span> clean 50/50</td>
+<td><span class="dot win"></span> clean 50/50 split</td>
 </tr>
 <tr>
 <td><strong>Conversion Rate</strong></td>
 <td><strong>5.56%</strong></td>
 <td><strong>6.54%</strong></td>
 <td><strong>+17.6%</strong></td>
-<td><span class="dot win"></span> <strong>z = −6.07, &gt;99.99% confidence</strong></td>
+<td><span class="dot win"></span> <strong>&gt;99.99% confidence</strong></td>
 </tr>
 <tr>
 <td><strong>Revenue</strong></td>
