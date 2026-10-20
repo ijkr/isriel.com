@@ -1,0 +1,5 @@
+src/
+build/
+content/
+.staticrypt-password
+__pycache__/
