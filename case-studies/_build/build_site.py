@@ -19,6 +19,11 @@ _SERVER_CASES = "/opt/data/workspace/job-search/03-case-studies"
 CASES = os.environ.get("CASES_DIR") or (
     _SERVER_CASES if os.path.isdir(_SERVER_CASES) else os.path.join(ROOT, "content"))
 STATICRYPT_VERSION = "3.5.4"
+# Fixed salt across ALL pages so StatiCrypt's "Remember me" login works
+# site-wide (log in once, every page auto-decrypts). The salt is embedded in
+# the public encrypted pages anyway, so keeping it here is no exposure.
+# Change it (32 hex chars) only if you want to invalidate every remembered login.
+STATICRYPT_SALT = "9f06d8831857273deb9aac6941d81d20"
 TODAY = datetime.date.today().strftime("%d %b %Y")
 
 # ---------------------------------------------------------------- design system
@@ -300,6 +305,144 @@ PAGES = [
         client="Step One Life",
     ),
     dict(
+        slug="step-one-liquid-pdp",
+        source=None,
+        title="Rebuilding the PDP in Liquid &mdash; Step One",
+        hero_title="Re-platforming the PDP<br><em>without losing a conversion</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; AU &nbsp;·&nbsp; Aug 2026 &nbsp;·&nbsp; 2 tests",
+        standfirst=("The product page ran on an iFrame \u201cIslands\u201d architecture \u2014 slow and fragile. "
+                    "The rebuild in native Shopify Liquid was gated behind two sequential A/B validations "
+                    "(Men\u2019s, then Women\u2019s) with a maintain-or-improve bar. <strong>Both migrations deployed "
+                    "with zero commercial regression</strong> \u2014 and the tests caught a +39.9% desktop \u201cwin\u201d "
+                    "that was pure instrumentation artefact."),
+        stats=[("+5.1%", "CVR, Men\u2019s Liquid PDP (nothing significantly worse anywhere)", "win"),
+               ("+7.4%", "RPV, Men\u2019s \u2014 climbing all test", "win"),
+               ("94.8", "Women\u2019s SKU index post-migration \u2014 friction closed from ~85", "win"),
+               ("2", "categories migrated behind A/B validation, both shipped", "neutral")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 migration gating, test design, per-device/SKU/channel analysis"),
+              ("Programme scale", "2 sequential tests, ~95K visitors combined, full device/channel/SKU cuts"),
+              ("Primary metric owned", "Non-inferiority across CVR, RPV, ATC, CTR"),
+              ("Status", "Men\u2019s and Women\u2019s Liquid PDPs both deployed. Per-device splits flagged unreliable pending audit.")],
+        client="Step One Life",
+    ),
+    dict(
+        slug="step-one-visual-mobile-menu",
+        source=None,
+        title="Visual Mobile Menu &mdash; Step One",
+        hero_title="Replacing the text menu<br>with <em>product imagery</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; AU &nbsp;·&nbsp; Jul\u2013Aug 2026",
+        standfirst=("The mobile menu was a text list for a product chosen by colour and style. An image-led "
+                    "menu lifted add-to-cart significantly and conversion with it \u2014 while clickthrough "
+                    "fell significantly, the signature of a <strong>shorter path, not a weaker one</strong>."),
+        stats=[("+5.1%", "conversion rate (5.82% \u2192 6.11%)", "win"),
+               ("+4.6%", "add-to-cart rate \u2014 statistically significant", "win"),
+               ("\u22126.7%", "clickthrough \u2014 significant, and correctly read as navigation efficiency", "neutral"),
+               ("+A$6,625", "revenue over the read window", "win")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 hypothesis, analysis, rollout call"),
+              ("Programme scale", "~67K visitors, mobile-only surface, new/returning and channel cuts"),
+              ("Primary metric owned", "Conversion rate, with ATC as the behavioural corroboration"),
+              ("Status", "Winner; Paid Social and SMS carried as watch items for paid traffic")],
+        client="Step One Life",
+    ),
+    dict(
+        slug="step-one-quick-buy",
+        source=None,
+        title="Quick Buy, Tested Twice, Killed Twice &mdash; Step One",
+        hero_title="The shortcut that<br><em>cost 17% of conversions</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; US &nbsp;·&nbsp; Jul 2026 &nbsp;·&nbsp; 2 iterations",
+        standfirst=("Quick-buy on the home page was supposed to shorten the path to purchase. It cut "
+                    "clickthroughs significantly and conversion with it \u2014 so the component was rethought "
+                    "around the diagnosed SKU-mix problem and tested again. <strong>Same result. "
+                    "Stopped in 4 days and abandoned</strong>, because significance wouldn\u2019t have changed "
+                    "the decision."),
+        stats=[("\u221217.2%", "CVR, iteration 1", "loss"),
+               ("\u221218.1%", "CVR, iteration 2 \u2014 after the diagnosed fix", "loss"),
+               ("\u221212.4%", "clickthrough, statistically significant in both", "loss"),
+               ("88", "Boxer Brief unit index \u2014 the tile steered buyers off the hero SKU", "loss")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 hypothesis, kill call, iteration design, second kill call"),
+              ("Programme scale", "2 tests, ~5.3K visitors, US home page and men\u2019s landing page"),
+              ("Primary metric owned", "Conversion rate, with CTR as leading indicator"),
+              ("Status", "Concept abandoned after two iterations \u2014 not extended, not re-skinned")],
+        client="Step One Life",
+    ),
+    dict(
+        slug="step-one-founder-story",
+        source=None,
+        title="The Founder Story Tile &mdash; Step One",
+        hero_title="Right asset,<br><em>wrong audience</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; US &nbsp;·&nbsp; May 2026",
+        standfirst=("A \u201cMeet the Founder\u201d tile on the PDP lifted conversion for first-time visitors "
+                    "(<strong>+5.7%</strong>) while actively hurting returning customers and CRM traffic "
+                    "(<strong>\u221244% RPV on SMS</strong>). The aggregate hid the mechanism; the segment read "
+                    "turned a no-rollout into a targeting brief."),
+        stats=[("+5.7%", "CVR among new visitors \u2014 the tile works for cold audiences", "win"),
+               ("\u22127.5%", "CVR among returning visitors", "loss"),
+               ("\u221244.4%", "RPV on SMS traffic \u2014 the highest-intent cohort", "loss"),
+               ("+9.7%", "CVR on direct traffic \u2014 brand-aware, not yet loyal", "win")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 hypothesis, segment analysis, follow-up design"),
+              ("Programme scale", "~31K visitors, US PDP, visitor-type and channel segmentation"),
+              ("Primary metric owned", "Conversion rate, read against RPV/AOV value metrics"),
+              ("Status", "No rollout as-is; segment-targeted variant (new visitors only, CRM-suppressed) designed as follow-up")],
+        client="Step One Life",
+    ),
+    dict(
+        slug="step-one-trust-signals",
+        source=None,
+        title="Trust Signals on the Lead Image &mdash; Step One",
+        hero_title="How much trust signal<br><em>is enough</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; US &nbsp;·&nbsp; Oct 2025 &nbsp;·&nbsp; 3-variant ladder",
+        standfirst=("The PDP lead image carried only product; the trust assets sat below the fold. "
+                    "A three-variant ladder \u2014 Trustpilot, +render, +USP icons \u2014 asked how much signal "
+                    "pays, not just whether it works. <strong>+8.5% conversion</strong>, implemented, "
+                    "with the AU replication queued."),
+        stats=[("+8.5%", "conversion rate, winning variant", "win"),
+               ("3", "variants laddered by information density", "neutral"),
+               ("15", "days, US storefront", "neutral"),
+               ("AU", "replication queued on the trusted stack", "neutral")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 ladder test design, cross-market replication plan"),
+              ("Programme scale", "Control + 3 variants, US PDP lead image"),
+              ("Primary metric owned", "Conversion rate"),
+              ("Status", "Implemented in the US; AU rerun queued (US result from a CRO tool under trial \u2014 treated as directional until replicated)")],
+        client="Step One Life",
+    ),
+    dict(
+        slug="step-one-payment-methods",
+        source=None,
+        title="Payment Methods on the PDP &mdash; Step One",
+        hero_title="Financing anxiety,<br><em>answered upstream of the cart</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; UK &nbsp;·&nbsp; Oct 2025",
+        standfirst=("Instalment options existed but were invisible at the point of decision. Making payment "
+                    "types visible on the PDP lifted UK conversion <strong>+5.6%</strong> \u2014 and generated "
+                    "its own follow-up: relocate the logos to the side cart and test whether the win survives "
+                    "the move."),
+        stats=[("+5.6%", "conversion rate, UK PDP", "win"),
+               ("10", "days to the call (11\u201320 Oct 2025)", "neutral"),
+               ("1", "follow-up spawned \u2014 side-cart relocation test", "neutral")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 hypothesis, analysis, iteration pipeline"),
+              ("Programme scale", "UK storefront, PDP surface"),
+              ("Primary metric owned", "Conversion rate"),
+              ("Status", "Implemented; side-cart relocation follow-up queued")],
+        client="Step One Life",
+    ),
+    dict(
+        slug="step-one-bundle-builder",
+        source=None,
+        title="Mixed-Colours Bundle Builder &mdash; Step One",
+        hero_title="Killing the page-hops<br><em>inside the bundle journey</em>",
+        eyebrow="Step One Life &nbsp;·&nbsp; AU + UK &nbsp;·&nbsp; Oct 2025",
+        standfirst=("Building a mixed-colour pack meant adding one colour, changing pages, adding the next. "
+                    "A single-surface bundle builder won <strong>+19.1% in AU and +5.6% in the UK in the "
+                    "same week</strong> \u2014 the cross-market replication that turns a result into a mechanic."),
+        stats=[("+19.1%", "CVR, AU (24\u201329 Oct 2025)", "win"),
+               ("+5.6%", "CVR, UK (27\u201331 Oct 2025)", "win"),
+               ("2", "markets, same week, same verdict", "win")],
+        meta=[("Role", "CRO Lead + Ecom Ops \u2014 hypothesis, dual-market analysis, rollout"),
+              ("Programme scale", "2 storefronts in parallel, theme-level component"),
+              ("Primary metric owned", "Conversion rate"),
+              ("Status", "Implemented in both markets; desktop caveat logged with session-recording follow-up; upsell and orientation iterations queued")],
+        client="Step One Life",
+    ),
+    dict(
         slug="nine-intro-offer-pricing",
         source=None,  # markdown authored in src/
         title="Intro Offer Pricing &mdash; Nine Entertainment",
@@ -382,7 +525,7 @@ PAGES = [
     ),
 ]
 
-INDEX_STATS = [("8", "case studies &mdash; two employers, 4 mastheads", "neutral"),
+INDEX_STATS = [("15", "case studies &mdash; two employers, 4 mastheads", "neutral"),
                ("77", "documented experiments behind them", "neutral"),
                ("60%+", "documented win rate across both programmes", "win"),
                ("7", "storefronts / mastheads / markets", "neutral")]
@@ -400,6 +543,27 @@ INDEX_ROWS = [
     ("step-one-tiered-discounting", "Tiered Discounting &amp; Pack Pricing", "Step One Life",
      "AU / UK / US · Feb–Jun 2026", "+A$30,894", "incremental revenue",
      "Unit-based tiers replaced with spend thresholds across 9 experiments, with a quantified discount-efficiency finding."),
+    ("step-one-liquid-pdp", "Rebuilding the PDP in Liquid", "Step One Life",
+     "AU · Aug 2026", "0 regressions", "2 migrations shipped",
+     "An iFrame PDP re-platformed to native Liquid, gated behind two A/B validations — and a +39.9% desktop 'win' exposed as an instrumentation artefact."),
+    ("step-one-visual-mobile-menu", "Visual Mobile Menu", "Step One Life",
+     "AU · Jul–Aug 2026", "+5.1% CVR", "ATC +4.6% sig",
+     "An image-led mobile menu. Clickthrough fell significantly — the signature of a shorter path, not a weaker one."),
+    ("step-one-quick-buy", "Quick Buy, Tested Twice, Killed Twice", "Step One Life",
+     "US · Jul 2026", "−17% CVR", "concept abandoned",
+     "Quick-buy cut conversion in both iterations. Stopped in 4 days — significance wouldn't have changed the decision."),
+    ("step-one-founder-story", "The Founder Story Tile", "Step One Life",
+     "US · May 2026", "+5.7% new", "−44% RPV on SMS",
+     "Right asset, wrong audience: a PDP founder tile that converts cold visitors while taxing loyal ones. The segment read became a targeting brief."),
+    ("step-one-trust-signals", "Trust Signals on the Lead Image", "Step One Life",
+     "US · Oct 2025", "+8.5% CVR", "3-variant ladder",
+     "Trustpilot → +render → +USP icons: a laddered test that asked how much trust signal pays, not just whether it works."),
+    ("step-one-payment-methods", "Payment Methods on the PDP", "Step One Life",
+     "UK · Oct 2025", "+5.6% CVR", "implemented",
+     "Financing anxiety answered upstream of the cart — payment visibility at the point of decision, not checkout."),
+    ("step-one-bundle-builder", "Mixed-Colours Bundle Builder", "Step One Life",
+     "AU + UK · Oct 2025", "+19.1% CVR", "won both markets",
+     "Killing the page-hops inside the bundle journey — +19.1% in AU, +5.6% in the UK, same week, same verdict."),
     ("nine-intro-offer-pricing", "Intro Offer Pricing", "Nine Entertainment",
      "SMH · The Age · AFR · Nov–Dec 2023", "2,751", "subscriptions acquired",
      "A three-channel flash-sale programme across paywall, email and landing page — different price points win on different paywall types."),
@@ -619,7 +783,8 @@ def encrypt_all():
     for f in sorted(glob.glob(os.path.join(SRC, "*.html"))):
         subprocess.run(
             ["npx", "--yes", f"staticrypt@{STATICRYPT_VERSION}", f,
-             "-d", BUILD, "--short",
+             "-d", BUILD, "--short", "-s", STATICRYPT_SALT,
+             "--remember", "30",
              "--template-title", "Protected — Case Studies"],
             check=True, env=env,
             stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
