@@ -3,3 +3,4 @@ build/
 content/
 .staticrypt-password
 __pycache__/
+.staticrypt.json

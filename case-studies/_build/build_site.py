@@ -531,50 +531,50 @@ INDEX_STATS = [("15", "case studies &mdash; two employers, 4 mastheads", "neutra
                ("7", "storefronts / mastheads / markets", "neutral")]
 
 INDEX_ROWS = [
-    ("step-one-pdp-redesign", "PDP Redesign Programme", "Step One Life",
-     "AU + UK · Jan–Jun 2026", "+17.6% CVR", "&gt;99.99% confidence",
+    ("step-one-pdp-redesign", "PDP Redesign Programme", "Step One",
+     "AU + UK · Jan–Jun 2026", "UX & Layout", "+17.6% CVR", "&gt;99.99% confidence",
      "Six iterations rebuilding the product detail page. The UK rollout is the strongest result in the programme."),
-    ("step-one-landing-page-cro", "Landing Page CRO", "Step One Life",
-     "AU · Jan–Feb 2026", "+42.8% CVR", "&gt;99.99% confidence",
+    ("step-one-landing-page-cro", "Landing Page CRO", "Step One",
+     "AU · Jan–Feb 2026", "Value Proposition", "+42.8% CVR", "&gt;99.99% confidence",
      "Removing price from above the fold on campaign landing pages — the largest single effect in the programme."),
-    ("step-one-social-proof", "Social Proof Messaging", "Step One Life",
-     "US · AU · UK · Dec 2025–Jan 2026", "+28.1% CVR", "&gt;99.99% confidence",
+    ("step-one-social-proof", "Social Proof Messaging", "Step One",
+     "US · AU · UK · Dec 2025–Jan 2026", "Social Proof", "+28.1% CVR", "&gt;99.99% confidence",
      "One treatment, three storefronts, run in parallel to test whether a claim travels."),
-    ("step-one-tiered-discounting", "Tiered Discounting &amp; Pack Pricing", "Step One Life",
-     "AU / UK / US · Feb–Jun 2026", "+A$30,894", "incremental revenue",
+    ("step-one-tiered-discounting", "Tiered Discounting &amp; Pack Pricing", "Step One",
+     "AU / UK / US · Feb–Jun 2026", "Pricing", "+A$30,894", "incremental revenue",
      "Unit-based tiers replaced with spend thresholds across 9 experiments, with a quantified discount-efficiency finding."),
-    ("step-one-liquid-pdp", "Rebuilding the PDP in Liquid", "Step One Life",
-     "AU · Aug 2026", "0 regressions", "2 migrations shipped",
+    ("step-one-liquid-pdp", "Rebuilding the PDP in Liquid", "Step One",
+     "AU · Aug 2026", "Technical CRO", "0 regressions", "2 migrations shipped",
      "An iFrame PDP re-platformed to native Liquid, gated behind two A/B validations — and a +39.9% desktop 'win' exposed as an instrumentation artefact."),
-    ("step-one-visual-mobile-menu", "Visual Mobile Menu", "Step One Life",
-     "AU · Jul–Aug 2026", "+5.1% CVR", "ATC +4.6% sig",
+    ("step-one-visual-mobile-menu", "Visual Mobile Menu", "Step One",
+     "AU · Jul–Aug 2026", "Navigation & Mobile", "+5.1% CVR", "ATC +4.6% sig",
      "An image-led mobile menu. Clickthrough fell significantly — the signature of a shorter path, not a weaker one."),
-    ("step-one-quick-buy", "Quick Buy, Tested Twice, Killed Twice", "Step One Life",
-     "US · Jul 2026", "−17% CVR", "concept abandoned",
+    ("step-one-quick-buy", "Quick Buy, Tested Twice, Killed Twice", "Step One",
+     "US · Jul 2026", "Friction Reduction", "−17% CVR", "concept abandoned",
      "Quick-buy cut conversion in both iterations. Stopped in 4 days — significance wouldn't have changed the decision."),
-    ("step-one-founder-story", "The Founder Story Tile", "Step One Life",
-     "US · May 2026", "+5.7% new", "−44% RPV on SMS",
+    ("step-one-founder-story", "The Founder Story Tile", "Step One",
+     "US · May 2026", "Value Proposition", "+5.7% new", "−44% RPV on SMS",
      "Right asset, wrong audience: a PDP founder tile that converts cold visitors while taxing loyal ones. The segment read became a targeting brief."),
-    ("step-one-trust-signals", "Trust Signals on the Lead Image", "Step One Life",
-     "US · Oct 2025", "+8.5% CVR", "3-variant ladder",
+    ("step-one-trust-signals", "Trust Signals on the Lead Image", "Step One",
+     "US · Oct 2025", "Trust Signals", "+8.5% CVR", "3-variant ladder",
      "Trustpilot → +render → +USP icons: a laddered test that asked how much trust signal pays, not just whether it works."),
-    ("step-one-payment-methods", "Payment Methods on the PDP", "Step One Life",
-     "UK · Oct 2025", "+5.6% CVR", "implemented",
+    ("step-one-payment-methods", "Payment Methods on the PDP", "Step One",
+     "UK · Oct 2025", "Payment & Anxiety", "+5.6% CVR", "implemented",
      "Financing anxiety answered upstream of the cart — payment visibility at the point of decision, not checkout."),
-    ("step-one-bundle-builder", "Mixed-Colours Bundle Builder", "Step One Life",
-     "AU + UK · Oct 2025", "+19.1% CVR", "won both markets",
+    ("step-one-bundle-builder", "Mixed-Colours Bundle Builder", "Step One",
+     "AU + UK · Oct 2025", "Friction Reduction", "+19.1% CVR", "won both markets",
      "Killing the page-hops inside the bundle journey — +19.1% in AU, +5.6% in the UK, same week, same verdict."),
     ("nine-intro-offer-pricing", "Intro Offer Pricing", "Nine Entertainment",
-     "SMH · The Age · AFR · Nov–Dec 2023", "2,751", "subscriptions acquired",
+     "SMH · The Age · AFR · Nov–Dec 2023", "Pricing", "2,751", "subscriptions acquired",
      "A three-channel flash-sale programme across paywall, email and landing page — different price points win on different paywall types."),
     ("nine-personalised-retention", "Personalised Pricing &amp; Retention", "Nine Entertainment",
-     "All mastheads · FY22–FY24", "$400–530K", "modelled annual revenue",
+     "All mastheads · FY22–FY24", "Pricing", "$400–530K", "modelled annual revenue",
      "Churn-propensity-tiered renewal pricing — and the pivot to randomised testing when the model's precision fell short."),
     ("nine-social-ribbon", "Social Ribbon: Removing the Timer", "Nine Entertainment",
-     "AFR · CRO-30.0-2312", "+33%", "conversion",
+     "AFR · CRO-30.0-2312", "Friction Reduction", "+33%", "conversion",
      "One variable — the 30-second auto-dismiss timer removed. Expiry friction was costing engagement, not creating urgency."),
     ("nine-multi-package-paywall", "Multi-Package Paywall", "Nine Entertainment",
-     "SMH · The Age · CRO-73/74.0-2404", "+102%", "The Age conversions",
+     "SMH · The Age · CRO-73/74.0-2404", "Pricing", "+102%", "The Age conversions",
      "Three prices instead of take-it-or-leave-it: +70% conversions at SMH, +102% at The Age, both at 100% winning probability."),
 ]
 
@@ -708,9 +708,11 @@ def build_page(p):
 
 def build_index():
     cards = []
-    for slug, title, client, period, metric, sub, blurb in INDEX_ROWS:
+    for slug, title, client, period, category, metric, sub, blurb in INDEX_ROWS:
+        b_cls = "b-" + re.sub(r"[^a-z0-9]+", "-", category.lower()).strip("-")
         cards.append(f"""<a class="card" href="{slug}.html">
   <div class="c-top"><span class="c-client">{client}</span><span class="c-period">{period}</span></div>
+  <div class="c-badge {b_cls}"><span class="b-dot"></span>{category}</div>
   <h3 class="c-title">{title}</h3>
   <p class="c-blurb">{blurb}</p>
   <div class="c-foot"><span class="c-metric">{metric}</span><span class="c-sub">{sub}</span></div>
@@ -721,15 +723,29 @@ def build_index():
 .lede strong{font-weight:500;color:var(--ink)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:0;
   border-top:1.5px solid var(--ink);border-left:1px solid var(--line)}
-.card{display:block;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+.card{display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
   padding:26px 26px 22px;background:var(--sheet);border-bottom-color:var(--line)}
 .card:hover{background:#fdfcf7}
 .card{border-bottom:1px solid var(--line)!important}
 .c-top{display:flex;justify-content:space-between;gap:12px;font:500 11.5px/1.3 var(--mono);
-  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .c-client{color:var(--accent)}
+.c-badge{display:inline-flex;align-items:center;gap:6.5px;font:500 10.5px/1 var(--mono);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);background:var(--paper-2);
+  border:1px solid var(--line);padding:4px 8px;border-radius:2px;margin-bottom:14px;
+  width:fit-content}
+.b-dot{width:6.5px;height:6.5px;border-radius:50%;display:inline-block;flex:0 0 6.5px}
+.b-pricing .b-dot{background:#b8860b}
+.b-trust-signals .b-dot{background:#0b5c4d}
+.b-social-proof .b-dot{background:#1d4ed8}
+.b-ux-layout .b-dot{background:#6d28d9}
+.b-friction-reduction .b-dot{background:#c2410c}
+.b-value-proposition .b-dot{background:#9f1239}
+.b-navigation-mobile .b-dot{background:#0f766e}
+.b-payment-anxiety .b-dot{background:#92400e}
+.b-technical-cro .b-dot{background:#475569}
 .c-title{font:400 25px/1.15 var(--display);letter-spacing:-.01em;margin:0 0 12px;color:var(--ink)}
-.c-blurb{font:400 15px/1.55 var(--sans);color:var(--muted);margin:0 0 20px;max-width:52ch}
+.c-blurb{font:400 15px/1.55 var(--sans);color:var(--muted);margin:0 0 20px;max-width:52ch;flex-grow:1}
 .c-foot{display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--line-2);padding-top:14px}
 .c-metric{font:500 22px/1 var(--mono);color:var(--accent);letter-spacing:-.02em}
 .c-sub{font:400 12.5px/1.3 var(--mono);letter-spacing:.04em;color:var(--muted)}
@@ -780,13 +796,15 @@ def encrypt_all():
     for stale in glob.glob(os.path.join(BUILD, "*.html")):
         os.remove(stale)
     env = dict(os.environ, STATICRYPT_PASSWORD=pw)
+    npx_bin = "npx.cmd" if sys.platform == "win32" else "npx"
+    use_shell = sys.platform == "win32"
     for f in sorted(glob.glob(os.path.join(SRC, "*.html"))):
         subprocess.run(
-            ["npx", "--yes", f"staticrypt@{STATICRYPT_VERSION}", f,
+            [npx_bin, "--yes", f"staticrypt@{STATICRYPT_VERSION}", f,
              "-d", BUILD, "--short", "-s", STATICRYPT_SALT,
              "--remember", "30",
              "--template-title", "Protected — Case Studies"],
-            check=True, env=env,
+            check=True, env=env, shell=use_shell,
             stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         print(f"  encrypted {os.path.basename(f)}")
     subprocess.run([sys.executable, os.path.join(ROOT, "pre_publish.py")], check=True)
@@ -798,7 +816,11 @@ def main():
     os.makedirs(SRC, exist_ok=True)
     made = [build_index()]
     for p in PAGES:
-        made.append(build_page(p))
+        src = os.path.join(CASES, p["source"]) if p["source"] else os.path.join(SRC, p["slug"] + ".md")
+        if os.path.exists(src):
+            made.append(build_page(p))
+        else:
+            print(f"  skip (source missing) {p['slug']}")
     for f in made:
         print(f"  built {os.path.relpath(f, ROOT)}  ({os.path.getsize(f):,} bytes)")
     if encrypt_all():
