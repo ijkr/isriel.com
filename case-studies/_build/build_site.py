@@ -159,6 +159,32 @@ td strong{font-weight:600}
 .dot.loss{background:var(--loss)}
 .mark{color:#b8860b;font-size:15px}
 
+/* ---- screenshot gallery ---- */
+.gallery{width:100%;margin:32px 0 40px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-card{background:var(--sheet);border:1px solid var(--line);border-radius:4px;
+  overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s}
+.gallery-card:hover{border-color:var(--accent)}
+.gallery-tag{font:500 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 12px;background:var(--paper-2);border-bottom:1px solid var(--line);
+  color:var(--muted);display:flex;align-items:center;justify-content:space-between}
+.gallery-tag .tag-badge{padding:2px 7px;border-radius:2px;font-size:10px;font-weight:600;letter-spacing:.06em}
+.gallery-tag .tag-badge.control{background:var(--sheet);border:1px solid var(--line);color:var(--muted)}
+.gallery-tag .tag-badge.variant{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(11,92,77,.3)}
+.gallery-img-wrap{display:block;padding:12px;background:#faf8f4;overflow:hidden;text-align:center;border-bottom:0}
+.gallery-img{display:block;width:100%;height:auto;border-radius:3px;
+  border:1px solid var(--line-2);box-shadow:0 3px 10px rgba(0,0,0,.06);
+  transition:transform .2s ease}
+.gallery-card:hover .gallery-img{transform:scale(1.015)}
+.gallery-caption{padding:12px 14px 14px;font:400 13px/1.5 var(--sans);color:var(--ink-2);
+  border-top:1px solid var(--line-2);background:var(--sheet);flex-grow:1}
+@media(max-width:960px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+@media(max-width:540px){
+  .gallery-grid{grid-template-columns:1fr;gap:14px}
+}
+
 /* ---- footer ---- */
 footer{margin-top:88px;padding-top:26px;border-top:1.5px solid var(--ink);
   font:400 13.5px/1.6 var(--mono);color:var(--muted);display:flex;
@@ -658,7 +684,7 @@ def to_body(md_text):
     import markdown as mdlib
     t = plain_stats(md_text)
     # strip the source doc's own H1/H2/meta header - the shell supplies the hero
-    t = re.sub(r"\A#.*?\n(?:\*\*[^\n]*\n)*\n*---\n", "", t, flags=re.S)
+    t = re.sub(r"\A#[^#\n][^\n]*\n(?:\*\*[^\n]*\n)*\n*---\n", "", t)
     # source-doc trailing italics block -> footer note styling
     t = t.replace("✅", '<span class="dot win"></span>').replace("❌", '<span class="dot loss"></span>')
     t = t.replace("⭐", '<span class="mark">★</span>')
